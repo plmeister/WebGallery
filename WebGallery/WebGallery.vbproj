@@ -189,17 +189,16 @@
     <Compile Include="App_Start\RouteConfig.vb" />
     <Compile Include="App_Start\Startup.Auth.vb" />
     <Compile Include="Controllers\AccountController.vb" />
+    <Compile Include="Controllers\MyGalleriesController.vb" />
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201406032022402_InitialCreate.Designer.vb">
-      <DependentUpon>201406032022402_InitialCreate.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201406032022402_InitialCreate.vb" />
     <Compile Include="Migrations\Configuration.vb" />
     <Compile Include="Models\AccountViewModels.vb" />
     <Compile Include="Models\GalleryModels.vb" />
+    <Compile Include="Models\GalleryViewModels.vb" />
     <Compile Include="Models\IdentityModels.vb" />
+    <Compile Include="Models\MyGalleryViewModels.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -219,9 +218,6 @@
     <Compile Include="Startup.vb" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201406032022402_InitialCreate.resx">
-      <DependentUpon>201406032022402_InitialCreate.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -230,6 +226,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Database1.mdf" />
+    <Content Include="App_Data\Database1_log.ldf">
+      <DependentUpon>Database1.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -265,6 +265,11 @@
     <Content Include="Views\Account\ResetPassword.vbhtml" />
     <Content Include="Views\Account\ResetPasswordConfirmation.vbhtml" />
     <Content Include="Views\Shared\_LoginPartial.vbhtml" />
+    <Content Include="Views\MyGalleries\Index.vbhtml" />
+    <Content Include="Views\MyGalleries\Create.vbhtml" />
+    <Content Include="Views\MyGalleries\Edit.vbhtml" />
+    <Content Include="Views\MyGalleries\Delete.vbhtml" />
+    <Content Include="Views\Home\GalleryView.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
@@ -296,9 +301,7 @@
     <Content Include="Views\Shared\_Layout.vbhtml" />
     <Content Include="Views\Web.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />

@@ -7,6 +7,7 @@ Public Class Gallery
     Public Property Created As DateTime
     Public Overridable Property Owner As ApplicationUser
     Public Overridable Property Permissions As ICollection(Of GalleryPermission)
+    Public Overridable Property Items As ICollection(Of PublishMedia)
 End Class
 
 Public Class GalleryPermission
@@ -36,10 +37,12 @@ Public Class Media
     Public Overridable Property Comments As ICollection(Of Comment)
     Public Property BlobContainer As String
     Public Property BlobName As String
+    Public Overridable Property PublishedTo As ICollection(Of PublishMedia)
+    Public Property CreateDate As DateTime
 End Class
 
 Public Class PublishMedia
-    <Key(), DatabaseGenerated(DatabaseGeneratedOption.Identity)> Public Property PublishMedia As Long
+    <Key(), DatabaseGenerated(DatabaseGeneratedOption.Identity)> Public Property PublishMediaID As Long
     Public Overridable Property Media As Media
     Public Overridable Property Gallery As Gallery
     Public Overridable Property ModeratedBy As ApplicationUser
